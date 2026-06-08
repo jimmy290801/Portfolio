@@ -1,0 +1,1010 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Germán Castro Ramos | Full-Stack Developer</title>
+
+<meta name="description" content="Portfolio de Germán Castro Ramos. Full-Stack Developer con experiencia en desarrollo web, Docker, Linux, automatización y despliegue de aplicaciones.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root{
+    --bg:#030703;
+    --bg-soft:#071107;
+    --card:#0b160d;
+    --card-2:#0f1f12;
+    --green:#00ff7f;
+    --green-soft:#7cffb2;
+    --green-dark:#003d20;
+    --text:#f4fff7;
+    --muted:#a6bfae;
+    --border:rgba(0,255,127,.18);
+    --shadow:0 0 40px rgba(0,255,127,.18);
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:"Inter",sans-serif;
+    background:var(--bg);
+    color:var(--text);
+    overflow-x:hidden;
+}
+
+body::before{
+    content:"";
+    position:fixed;
+    inset:0;
+    background:
+        radial-gradient(circle at 20% 20%,rgba(0,255,127,.14),transparent 28%),
+        radial-gradient(circle at 80% 10%,rgba(124,255,178,.08),transparent 30%),
+        radial-gradient(circle at 50% 90%,rgba(0,255,127,.08),transparent 35%);
+    z-index:-3;
+}
+
+.grid-bg{
+    position:fixed;
+    inset:0;
+    background-image:
+        linear-gradient(rgba(0,255,127,.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0,255,127,.04) 1px, transparent 1px);
+    background-size:55px 55px;
+    animation:gridMove 20s linear infinite;
+    z-index:-2;
+}
+
+@keyframes gridMove{
+    from{transform:translate(0,0);}
+    to{transform:translate(55px,55px);}
+}
+
+.blob{
+    position:fixed;
+    width:420px;
+    height:420px;
+    border-radius:50%;
+    background:rgba(0,255,127,.08);
+    filter:blur(80px);
+    z-index:-1;
+    animation:floatBlob 9s ease-in-out infinite alternate;
+}
+
+.blob.one{
+    top:10%;
+    left:-10%;
+}
+
+.blob.two{
+    right:-10%;
+    bottom:10%;
+    animation-delay:2s;
+}
+
+@keyframes floatBlob{
+    from{transform:translateY(0) scale(1);}
+    to{transform:translateY(-40px) scale(1.12);}
+}
+
+a{
+    color:inherit;
+}
+
+.container{
+    width:min(1180px,90%);
+    margin:auto;
+}
+
+nav{
+    position:fixed;
+    top:0;
+    width:100%;
+    z-index:999;
+    background:rgba(3,7,3,.75);
+    backdrop-filter:blur(18px);
+    border-bottom:1px solid var(--border);
+}
+
+.nav-content{
+    height:72px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+}
+
+.logo{
+    font-family:"JetBrains Mono",monospace;
+    color:var(--green);
+    font-weight:700;
+}
+
+.nav-links{
+    display:flex;
+    gap:1.6rem;
+}
+
+.nav-links a{
+    text-decoration:none;
+    color:var(--muted);
+    font-size:.92rem;
+    transition:.25s;
+}
+
+.nav-links a:hover{
+    color:var(--green);
+}
+
+.hero{
+    min-height:100vh;
+    display:grid;
+    align-items:center;
+    padding-top:72px;
+}
+
+.hero-grid{
+    display:grid;
+    grid-template-columns:1.15fr .85fr;
+    gap:3rem;
+    align-items:center;
+}
+
+.badge{
+    display:inline-flex;
+    align-items:center;
+    gap:.6rem;
+    padding:.6rem 1rem;
+    border:1px solid var(--border);
+    border-radius:999px;
+    color:var(--green-soft);
+    background:rgba(0,255,127,.06);
+    margin-bottom:1.7rem;
+}
+
+.badge-dot{
+    width:9px;
+    height:9px;
+    border-radius:50%;
+    background:var(--green);
+    box-shadow:0 0 15px var(--green);
+    animation:pulse 1.5s infinite;
+}
+
+@keyframes pulse{
+    0%,100%{opacity:1;}
+    50%{opacity:.35;}
+}
+
+h1{
+    font-size:clamp(3.2rem,8vw,6.8rem);
+    line-height:.92;
+    letter-spacing:-.08em;
+    margin-bottom:1.4rem;
+}
+
+h1 span{
+    color:var(--green);
+    text-shadow:0 0 30px rgba(0,255,127,.35);
+}
+
+.subtitle{
+    font-size:clamp(1.2rem,3vw,1.8rem);
+    color:var(--green-soft);
+    font-weight:700;
+    margin-bottom:1.5rem;
+}
+
+.hero-description{
+    color:var(--muted);
+    max-width:720px;
+    font-size:1.08rem;
+    margin-bottom:1.3rem;
+}
+
+.typewriter{
+    font-family:"JetBrains Mono",monospace;
+    color:var(--green);
+    min-height:30px;
+    margin-bottom:2.2rem;
+}
+
+.cursor{
+    display:inline-block;
+    width:2px;
+    height:1.1em;
+    background:var(--green);
+    animation:blink 1s infinite;
+    vertical-align:middle;
+}
+
+@keyframes blink{
+    0%,50%{opacity:1;}
+    51%,100%{opacity:0;}
+}
+
+.hero-buttons{
+    display:flex;
+    gap:1rem;
+    flex-wrap:wrap;
+}
+
+.btn{
+    display:inline-flex;
+    align-items:center;
+    gap:.5rem;
+    padding:1rem 1.4rem;
+    border-radius:14px;
+    text-decoration:none;
+    transition:.3s;
+    font-weight:700;
+}
+
+.btn-primary{
+    background:var(--green);
+    color:#031006;
+    box-shadow:0 0 30px rgba(0,255,127,.22);
+}
+
+.btn-primary:hover{
+    transform:translateY(-4px);
+    box-shadow:0 0 45px rgba(0,255,127,.38);
+}
+
+.btn-secondary{
+    border:1px solid var(--border);
+    color:var(--text);
+    background:rgba(0,255,127,.04);
+}
+
+.btn-secondary:hover{
+    transform:translateY(-4px);
+    border-color:var(--green);
+}
+
+.terminal-card{
+    background:linear-gradient(180deg,var(--card),#071007);
+    border:1px solid var(--border);
+    border-radius:24px;
+    overflow:hidden;
+    box-shadow:var(--shadow);
+    transform:rotate(1deg);
+    animation:terminalFloat 5s ease-in-out infinite alternate;
+}
+
+@keyframes terminalFloat{
+    from{transform:rotate(1deg) translateY(0);}
+    to{transform:rotate(-1deg) translateY(-12px);}
+}
+
+.terminal-header{
+    padding:1rem;
+    background:rgba(0,255,127,.08);
+    border-bottom:1px solid var(--border);
+    display:flex;
+    gap:.5rem;
+}
+
+.dot{
+    width:12px;
+    height:12px;
+    border-radius:50%;
+    background:var(--green);
+    opacity:.8;
+}
+
+.terminal-body{
+    padding:1.6rem;
+    font-family:"JetBrains Mono",monospace;
+    color:var(--muted);
+    font-size:.9rem;
+}
+
+.line{
+    margin:.7rem 0;
+}
+
+.line span{
+    color:var(--green);
+}
+
+section{
+    padding:6rem 0;
+}
+
+.section-title{
+    font-size:clamp(2rem,4vw,3rem);
+    margin-bottom:3rem;
+    letter-spacing:-.04em;
+}
+
+.section-title span{
+    color:var(--green);
+}
+
+.card{
+    background:linear-gradient(180deg,var(--card),#071007);
+    border:1px solid var(--border);
+    border-radius:24px;
+    padding:2rem;
+    box-shadow:0 10px 35px rgba(0,0,0,.2);
+    transition:.3s;
+}
+
+.card:hover{
+    transform:translateY(-6px);
+    border-color:rgba(0,255,127,.38);
+    box-shadow:var(--shadow);
+}
+
+.about-grid{
+    display:grid;
+    grid-template-columns:1.1fr .9fr;
+    gap:1.5rem;
+}
+
+.about p{
+    color:var(--muted);
+    margin-bottom:1rem;
+}
+
+.quick-list{
+    display:grid;
+    gap:1rem;
+}
+
+.quick-item{
+    padding:1rem;
+    border:1px solid var(--border);
+    border-radius:16px;
+    background:rgba(0,255,127,.04);
+}
+
+.quick-item strong{
+    color:var(--green);
+}
+
+.timeline{
+    display:grid;
+    gap:1.5rem;
+    position:relative;
+}
+
+.timeline-item{
+    display:grid;
+    grid-template-columns:160px 1fr;
+    gap:1.5rem;
+    align-items:start;
+}
+
+.year{
+    color:var(--green);
+    font-family:"JetBrains Mono",monospace;
+    font-weight:700;
+}
+
+.timeline-content{
+    border-left:2px solid var(--green);
+    padding-left:1.5rem;
+}
+
+.timeline-content h3{
+    margin-bottom:.5rem;
+}
+
+.timeline-content p{
+    color:var(--muted);
+}
+
+.skills-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:1.4rem;
+}
+
+.skill-card h3{
+    color:var(--green);
+    margin-bottom:1rem;
+}
+
+.skill-card ul{
+    list-style:none;
+    display:grid;
+    gap:.7rem;
+}
+
+.skill-card li{
+    color:var(--muted);
+    padding:.6rem .8rem;
+    background:rgba(0,255,127,.04);
+    border-radius:12px;
+}
+
+.projects-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(310px,1fr));
+    gap:1.5rem;
+}
+
+.project-card{
+    position:relative;
+    overflow:hidden;
+}
+
+.project-card::before{
+    content:"";
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:4px;
+    background:linear-gradient(90deg,var(--green),transparent);
+}
+
+.project-card h3{
+    color:var(--green);
+    margin-bottom:1rem;
+}
+
+.project-card p{
+    color:var(--muted);
+    margin-bottom:1.2rem;
+}
+
+.tags{
+    display:flex;
+    flex-wrap:wrap;
+    gap:.5rem;
+}
+
+.tag{
+    font-size:.78rem;
+    padding:.4rem .75rem;
+    border-radius:999px;
+    background:rgba(0,255,127,.08);
+    border:1px solid var(--border);
+    color:var(--green-soft);
+}
+
+.lab-box{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:1.5rem;
+}
+
+.lab pre{
+    font-family:"JetBrains Mono",monospace;
+    color:var(--green-soft);
+    white-space:pre-wrap;
+    font-size:.9rem;
+}
+
+.lab p,
+.lab li{
+    color:var(--muted);
+}
+
+.lab ul{
+    margin-left:1.2rem;
+    margin-top:1rem;
+}
+
+.contact-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:1rem;
+}
+
+.contact-item{
+    background:var(--card);
+    border:1px solid var(--border);
+    border-radius:20px;
+    padding:1.5rem;
+    transition:.3s;
+}
+
+.contact-item:hover{
+    transform:translateY(-5px);
+    border-color:var(--green);
+}
+
+.contact-item a{
+    color:var(--green);
+    text-decoration:none;
+}
+
+footer{
+    padding:2rem;
+    text-align:center;
+    color:var(--muted);
+    border-top:1px solid var(--border);
+}
+
+.reveal{
+    opacity:0;
+    transform:translateY(30px);
+    transition:.8s ease;
+}
+
+.reveal.active{
+    opacity:1;
+    transform:translateY(0);
+}
+
+@media(max-width:900px){
+    .hero-grid,
+    .about-grid,
+    .lab-box{
+        grid-template-columns:1fr;
+    }
+
+    .terminal-card{
+        transform:none;
+    }
+
+    .nav-links{
+        display:none;
+    }
+
+    .timeline-item{
+        grid-template-columns:1fr;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="grid-bg"></div>
+<div class="blob one"></div>
+<div class="blob two"></div>
+
+<nav>
+    <div class="container nav-content">
+        <div class="logo">germancastro.dev</div>
+
+        <div class="nav-links">
+<a href="#about">Sobre mí</a>
+<a href="#education">Estudios</a>
+<a href="#experience">Experiencia</a>
+<a href="#skills">Stack</a>
+<a href="#projects">Proyectos</a>
+<a href="#lab">Lab</a>
+<a href="#contact">Contacto</a>
+        </div>
+    </div>
+</nav>
+
+<header class="hero">
+    <div class="container hero-grid">
+
+        <div>
+            <div class="badge">
+                <span class="badge-dot"></span>
+                Disponible para nuevas oportunidades
+            </div>
+
+            <h1>
+                Germán <span>Castro Ramos</span>
+            </h1>
+
+            <div class="subtitle">
+                Full-Stack Developer with DevOps Experience
+            </div>
+
+            <p class="hero-description">
+                Desarrollo aplicaciones web modernas con Vue.js, Node.js y FastAPI.
+                También me encargo de desplegarlas, automatizarlas y mantenerlas en entornos Linux con Docker.
+            </p>
+
+            <div class="typewriter">
+                <span id="typewriter-text"></span><span class="cursor"></span>
+            </div>
+
+            <div class="hero-buttons">
+                <a href="#projects" class="btn btn-primary">Ver proyectos</a>
+                <a href="https://github.com/jimmy290801" target="_blank" class="btn btn-secondary">GitHub</a>
+                <a href="https://www.linkedin.com/in/germancastroramos/" target="_blank" class="btn btn-secondary">LinkedIn</a>
+            </div>
+        </div>
+
+        <div class="terminal-card">
+            <div class="terminal-header">
+                <div class="dot"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+            </div>
+
+            <div class="terminal-body">
+                <div class="line"><span>$ whoami</span></div>
+                <div class="line">Germán Castro Ramos</div>
+                <div class="line"><span>$ profile --focus</span></div>
+                <div class="line">Web Development · Docker · Linux · Automation</div>
+                <div class="line"><span>$ status</span></div>
+                <div class="line">Open to work · Madrid · Remote</div>
+                <div class="line"><span>$ current_goal</span></div>
+                <div class="line">Build real web projects and deploy them properly.</div>
+            </div>
+        </div>
+
+    </div>
+</header>
+
+<section id="about" class="reveal">
+    <div class="container">
+
+        <h2 class="section-title">Sobre <span>mí</span></h2>
+
+        <div class="about-grid">
+
+            <div class="card about">
+                <p>
+                    Soy desarrollador Full-Stack con experiencia profesional en desarrollo web,
+                    despliegue de aplicaciones, automatización de servicios y administración Linux.
+                </p>
+
+                <p>
+                    He trabajado con aplicaciones web, APIs, bots conversacionales, despliegues Docker,
+                    monitorización y mantenimiento de servicios.
+                </p>
+
+                <p>
+                    Actualmente curso Ingeniería Informática en la UOC y desarrollo proyectos personales
+                    relacionados con desarrollo web, self-hosting y automatización.
+                </p>
+            </div>
+
+            <div class="card quick-list">
+                <div class="quick-item">
+                    <strong>Base principal:</strong><br>
+                    Desarrollo web full-stack
+                </div>
+
+                <div class="quick-item">
+                    <strong>Diferencial:</strong><br>
+                    Sé desplegar y mantener lo que desarrollo
+                </div>
+
+                <div class="quick-item">
+                    <strong>Objetivo:</strong><br>
+                    Crear proyectos reales, visibles y bien documentados
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+<section id="education" class="reveal">
+    <div class="container">
+
+        <h2 class="section-title">Estudios</h2>
+
+        <div class="timeline">
+
+            <div class="timeline-item">
+                <div class="year">2025 - Actualidad</div>
+                <div class="timeline-content">
+                    <h3>Grado en Ingeniería Informática · UOC</h3>
+                    <p>
+                        Formación universitaria en curso, centrada en informática, programación,
+                        sistemas, redes, bases de datos e ingeniería del software.
+                    </p>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="year">2022 - 2024</div>
+                <div class="timeline-content">
+                    <h3>Grado Superior en Desarrollo de Aplicaciones Web · I.E.S. Lázaro Cárdenas</h3>
+                    <p>
+                        Formación en desarrollo web full-stack, bases de datos, programación,
+                        despliegue de aplicaciones, interfaces web y administración básica de sistemas.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+<section id="experience" class="reveal">
+    <div class="container">
+
+        <h2 class="section-title">Experiencia <span>profesional</span></h2>
+
+        <div class="timeline">
+
+          <div class="timeline-item">
+                <div class="year">2024</div>
+                <div class="timeline-content">
+                    <h3>Aprendiz en prácticas · Inicia Soluciones</h3>
+                    <p>
+                        Prácticas formativas del Grado Superior de Desarrollo de Aplicaciones Web,
+                        colaborando en tareas de desarrollo web, bases de datos, Docker,
+                        virtualización y administración básica de sistemas Linux.
+                    </p>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="year">2025 - 2026</div>
+                <div class="timeline-content">
+                    <h3>DevOps Junior · Inicia Soluciones</h3>
+                    <p>
+                        Desarrollo y mantenimiento de aplicaciones web, creación de APIs,
+                        despliegue de servicios Dockerizados y administración de entornos Linux.
+                    </p>
+                    <p>
+                        Trabajo con tecnologías como Vue.js, Node.js, FastAPI, PHP, Docker,
+                        Nginx, MySQL/MariaDB, Jenkins, Git, Proxmox, VMware, Zabbix y Grafana.
+                    </p>
+                    <p>
+                        También participé en automatización de procesos internos, configuración
+                        de servidores web, monitorización de servicios, troubleshooting e integración
+                        de APIs y bots conversacionales.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+<section id="skills" class="reveal">
+    <div class="container">
+
+        <h2 class="section-title">Stack <span>tecnológico</span></h2>
+
+        <div class="skills-grid">
+
+            <div class="card skill-card">
+                <h3>Desarrollo web</h3>
+                <ul>
+                    <li>Vue.js</li>
+                    <li>Express.js</li>
+                    <li>FastAPI</li>
+                    <li>PHP</li>
+                    <li>JavaScript</li>
+                    <li>MySQL / MariaDB</li>
+                </ul>
+            </div>
+
+            <div class="card skill-card">
+                <h3>Despliegue</h3>
+                <ul>
+                    <li>Docker</li>
+                    <li>Linux</li>
+                    <li>Nginx</li>
+                    <li>CI/CD</li>
+                    <li>Jenkins</li>
+                    <li>Git / GitHub</li>
+                </ul>
+            </div>
+
+            <div class="card skill-card">
+                <h3>Infra & monitoring</h3>
+                <ul>
+                    <li>Proxmox</li>
+                    <li>VMware</li>
+                    <li>Zabbix</li>
+                    <li>Grafana</li>
+                    <li>pfSense</li>
+                    <li>Python</li>
+                </ul>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+<section id="projects" class="reveal">
+    <div class="container">
+
+        <h2 class="section-title">Proyectos</h2>
+
+        <div class="projects-grid">
+
+            <div class="card project-card">
+                <h3>Portfolio Personal</h3>
+                <p>
+                    Web personal para presentar experiencia, stack y proyectos con una estética técnica,
+                    limpia y centrada en desarrollo web.
+                </p>
+
+                <div class="tags">
+                    <span class="tag">HTML</span>
+                    <span class="tag">CSS</span>
+                    <span class="tag">JavaScript</span>
+                    <span class="tag">Responsive</span>
+                </div>
+            </div>
+
+            <div class="card project-card">
+                <h3>Docker Compose Stack</h3>
+                <p>
+                    Colección de servicios self-hosted desplegados con Docker Compose para aprendizaje,
+                    automatización y experimentación técnica.
+                </p>
+
+                <div class="tags">
+                    <span class="tag">Docker</span>
+                    <span class="tag">Linux</span>
+                    <span class="tag">Self-hosting</span>
+                    <span class="tag">Automation</span>
+                </div>
+            </div>
+
+            <div class="card project-card">
+                <h3>Próximos proyectos</h3>
+                <p>
+                    DeployBoard y LabStatus: ideas centradas en desarrollo web, dashboards,
+                    automatización y despliegue real.
+                </p>
+
+                <div class="tags">
+                    <span class="tag">Vue.js</span>
+                    <span class="tag">Node.js</span>
+                    <span class="tag">FastAPI</span>
+                    <span class="tag">Docker</span>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+<section id="lab" class="reveal">
+    <div class="container">
+
+        <h2 class="section-title">Personal <span>Lab</span></h2>
+
+        <div class="lab-box">
+
+            <div class="card lab">
+<pre>
+web-deployment-lab
+│
+├── Web apps
+├── APIs
+├── Docker services
+├── Reverse proxy
+├── HTTPS
+├── Monitoring
+└── Automation
+</pre>
+            </div>
+
+            <div class="card lab">
+                <p>
+                    Utilizo mi laboratorio personal para probar tecnologías, desplegar aplicaciones
+                    y practicar buenas prácticas de desarrollo, despliegue y monitorización.
+                </p>
+
+                <ul>
+                    <li>Docker</li>
+                    <li>Linux y servicios web</li>
+                    <li>Reverse proxy y HTTPS</li>
+                    <li>Monitorización con Zabbix y Grafana</li>
+                    <li>Automatización y backups</li>
+                </ul>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+<section id="contact" class="reveal">
+    <div class="container">
+
+        <h2 class="section-title">Contacto</h2>
+
+        <div class="contact-grid">
+
+            <div class="contact-item">
+                <strong>Email</strong><br>
+                <a href="mailto:german.cas.ram01@gmail.com">
+                    german.cas.ram01@gmail.com
+                </a>
+            </div>
+
+            <div class="contact-item">
+                <strong>LinkedIn</strong><br>
+                <a href="https://www.linkedin.com/in/germancastroramos/" target="_blank">
+                    linkedin.com/in/germancastroramos
+                </a>
+            </div>
+
+            <div class="contact-item">
+                <strong>GitHub</strong><br>
+                <a href="https://github.com/jimmy290801" target="_blank">
+                    github.com/jimmy290801
+                </a>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+<footer>
+    Germán Castro Ramos · Full-Stack Developer with DevOps Experience
+</footer>
+
+<script>
+const phrases = [
+    "Construyendo webs que no se quedan en localhost...",
+    "Desplegando proyectos con Docker y Linux...",
+    "Mezclando desarrollo web, APIs y automatización...",
+    "Aprendiendo infraestructura desde mi propio laboratorio...",
+    "Convirtiendo ideas en demos reales..."
+];
+
+const typewriterText = document.getElementById("typewriter-text");
+let phraseIndex = 0;
+let charIndex = 0;
+let deleting = false;
+
+function typeWriter(){
+    const phrase = phrases[phraseIndex];
+
+    if(deleting){
+        typewriterText.textContent = phrase.substring(0, charIndex - 1);
+        charIndex--;
+    }else{
+        typewriterText.textContent = phrase.substring(0, charIndex + 1);
+        charIndex++;
+    }
+
+    let speed = deleting ? 35 : 65;
+
+    if(!deleting && charIndex === phrase.length){
+        speed = 1400;
+        deleting = true;
+    }
+
+    if(deleting && charIndex === 0){
+        deleting = false;
+        phraseIndex = (phraseIndex + 1) % phrases.length;
+        speed = 400;
+    }
+
+    setTimeout(typeWriter, speed);
+}
+
+typeWriter();
+
+const reveals = document.querySelectorAll(".reveal");
+
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if(entry.isIntersecting){
+            entry.target.classList.add("active");
+        }
+    });
+},{
+    threshold:0.12
+});
+
+reveals.forEach(section => observer.observe(section));
+</script>
+
+</body>
+</html>
