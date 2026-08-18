@@ -1,0 +1,34 @@
+[
+  {
+    "name": "Docker Compose Stack",
+    "repo": "docker-compose-stack",
+    "category": "DevOps",
+    "label": "Infrastructure & Containers",
+    "description": "Entorno contenerizado con FastAPI, PostgreSQL, Redis y Nginx, orientado a practicar orquestación de servicios, redes, persistencia y despliegues reproducibles con Docker Compose.",
+    "technologies": [
+      "Docker",
+      "FastAPI",
+      "PostgreSQL",
+      "Redis",
+      "Nginx"
+    ],
+    "url": "https://github.com/jimmy290801/docker-compose-stack",
+    "featured": true
+  },
+  {
+    "name": "Portfolio profesional",
+    "repo": "Portfolio",
+    "category": "Development",
+    "label": "Web & Deployment",
+    "description": "Portfolio responsive desarrollado con HTML, CSS y JavaScript modular, con proyectos cargados desde JSON, filtros dinámicos e integración con la API pública de GitHub.",
+    "technologies": [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "GitHub API",
+      "JSON"
+    ],
+    "url": "https://github.com/jimmy290801/Portfolio",
+    "featured": true
+  }
+]
