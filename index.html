@@ -4,9 +4,9 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>Germán Castro Ramos | DevOps Junior & IT </title>
+  <title>Germán Castro Ramos | Técnico IT & DevOps Junior</title>
 
-  <meta name="description" content="Portfolio de Germán Castro Ramos. DevOps, infraestructura, automatización, desarrollo web, Python, Linux, Docker, Proxmox, observabilidad e integración de IA.">
+  <meta name="description" content="Portfolio de Germán Castro Ramos, Técnico IT & DevOps Junior con experiencia en Linux, Docker, Python, automatización, infraestructura, sistemas y aplicaciones web.">
   <meta name="author" content="Germán Castro Ramos">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -748,6 +748,105 @@ footer{
   .avatar-frame{width:260px;height:260px;}
 }
 
+
+/* --- Ajustes de contenido y posicionamiento profesional --- */
+.role-title{
+  font-size:clamp(1.35rem,2.8vw,2rem);
+  color:var(--green-soft);
+  font-weight:800;
+  margin-bottom:.55rem;
+}
+
+.tech-focus{
+  font-family:"JetBrains Mono",monospace;
+  color:var(--muted);
+  font-size:.95rem;
+  line-height:1.55;
+  margin-bottom:1rem;
+}
+
+.value-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:1rem;
+}
+
+.value-card h3{
+  color:var(--green);
+  margin-bottom:.75rem;
+}
+
+.value-card p{
+  color:var(--muted);
+  line-height:1.62;
+}
+
+.secondary-stack{
+  margin-top:1rem;
+}
+
+.secondary-stack h3{
+  color:var(--green);
+  margin-bottom:.8rem;
+}
+
+.secondary-stack p{
+  color:var(--muted);
+  line-height:1.7;
+}
+
+.project-actions{
+  display:flex;
+  gap:.7rem;
+  flex-wrap:wrap;
+  margin-top:1rem;
+}
+
+.project-link{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  padding:.65rem .9rem;
+  border:1px solid var(--border);
+  border-radius:11px;
+  text-decoration:none;
+  color:var(--green-soft);
+  background:rgba(0,255,127,.04);
+  font-weight:700;
+  font-size:.85rem;
+  transition:.25s;
+}
+
+.project-link:hover{
+  color:var(--green);
+  border-color:var(--green);
+  transform:translateY(-2px);
+}
+
+.contact-intro{
+  margin-bottom:1.25rem;
+  max-width:850px;
+}
+
+.contact-intro p{
+  color:var(--muted);
+  line-height:1.65;
+  margin-top:.7rem;
+}
+
+.availability-line{
+  margin-top:1.2rem;
+  font-family:"JetBrains Mono",monospace;
+  color:var(--green-soft);
+  font-size:.9rem;
+}
+
+@media(max-width:820px){
+  .value-grid{
+    grid-template-columns:1fr;
+  }
+}
+
 </style>
 </head>
 
@@ -767,8 +866,8 @@ footer{
         <a href="#about">Sobre mí</a>
         <a href="#experience">Experiencia</a>
         <a href="#skills">Stack</a>
+        <a href="#value">Competencias</a>
         <a href="#projects">Proyectos</a>
-        <a href="#lab">Lab</a>
         <a href="#contact">Contacto</a>
       </div>
     </div>
@@ -787,12 +886,18 @@ footer{
           Germán <span>Castro Ramos</span>
         </h1>
 
-        <div class="subtitle">
+        <div class="role-title">
+          DevOps Junior & IT
+        </div>
+
+        <div class="tech-focus">
           Linux · Docker · Python · Automatización · Sistemas & Aplicaciones Web
         </div>
 
         <p class="hero-description">
-          experiencia profesional en sistemas Linux, Docker, virtualización, automatización y desarrollo de aplicaciones. Combino sistemas y desarrollo para desplegar, mantener y automatizar servicios y aplicaciones.
+          Experiencia profesional en sistemas Linux, Docker, virtualización,
+          automatización y desarrollo de aplicaciones. Combino sistemas y desarrollo para
+          desplegar, mantener y automatizar servicios y aplicaciones.
         </p>
 
         <div class="typewriter">
@@ -849,32 +954,42 @@ footer{
         <div class="about-grid">
           <div class="card about">
             <p>
-              Soy Técnico Superior en Desarrollo de Aplicaciones Web con experiencia profesional en sistemas, infraestructura, automatización y desarrollo.
+              Soy Técnico Superior en Desarrollo de Aplicaciones Web con experiencia profesional
+              en sistemas, infraestructura, automatización y desarrollo.
             </p>
 
             <p>
-              Durante mi experiencia profesional he trabajado con entornos Linux, virtualización, Docker, despliegue y mantenimiento de aplicaciones, automatización mediante Python y Bash, APIs y monitorización de servicios.
+              Durante mi experiencia profesional he trabajado con entornos Linux, virtualización,
+              Docker, despliegue y mantenimiento de aplicaciones, automatización mediante Python y
+              Bash, APIs y monitorización de servicios.
             </p>
 
             <p>
-              Me interesa especialmente el punto de unión entre sistemas y desarrollo: entender cómo funciona una aplicación, desplegarla, mantener su infraestructura, automatizar procesos y resolver los problemas que aparecen en producción.
+              Me interesa especialmente el punto de unión entre sistemas y desarrollo: entender
+              cómo funciona una aplicación, desplegarla, mantener su infraestructura, automatizar
+              procesos y resolver los problemas que aparecen en producción.
+            </p>
+
+            <p>
+              Actualmente busco nuevas oportunidades en sistemas, DevOps, infraestructura,
+              automatización, soporte IT o desarrollo.
             </p>
           </div>
 
           <div class="card quick-list">
             <div class="quick-item">
               <strong>Perfil principal</strong>
-              <span>Infraestructura, DevOps y desarrollo web</span>
+              <span>Sistemas · Infraestructura · DevOps</span>
             </div>
 
             <div class="quick-item">
               <strong>Diferencial</strong>
-              <span>Construir, despliegar, automatizar y monitorizar</span>
+              <span>Desarrollo · Despliegue · Automatización · Monitorización</span>
             </div>
 
             <div class="quick-item">
               <strong>Stack clave</strong>
-              <span>Linux, Docker, Python, APIs, IA y monitorización</span>
+              <span>Linux · Docker · Python · APIs</span>
             </div>
           </div>
         </div>
@@ -887,64 +1002,43 @@ footer{
 
         <div class="timeline">
           <div class="timeline-item">
-            <div class="year">2025 - 2026</div>
+            <div class="year"> 2025 — 2026</div>
             <div class="timeline-content">
-              <h3>DevOps Engineer · Inicia Soluciones</h3>
+              <h3>Junior DevOps Engineer · Inicia Soluciones</h3>
               <p>
-                Administración de entornos Linux, virtualización con Proxmox y VMware,
-                despliegue de servicios Dockerizados, configuración de servidores web,
-                automatización con Bash/Python y mantenimiento de aplicaciones web y APIs.
+                Administración y mantenimiento de infraestructuras Linux en entornos cloud y
+                on-premise, trabajando con Docker, Proxmox y VMware.
               </p>
               <p>
-                Trabajo con herramientas como Docker, Git, Jenkins, Nginx, MySQL/MariaDB,
-                Zabbix, Grafana, Vue.js, Node.js, FastAPI y PHP. Participación en troubleshooting,
-                monitorización, integración de APIs y soporte a equipos técnicos.
+                Automatización de tareas y procesos mediante Python, Bash, Git y n8n, además de
+                integración de servicios mediante APIs REST, JSON y webhooks.
               </p>
               <p>
-                Integración de soluciones basadas en IA generativa y agentes conversacionales,
-                utilizando herramientas como ChatGPT y Claude para documentación, automatización
-                y asistencia en procesos de desarrollo.
+                Desarrollo y mantenimiento de aplicaciones, APIs y servicios internos con Vue.js,
+                Node.js, Python, Nginx, MySQL y MariaDB.
+              </p>
+              <p>
+                Monitorización de sistemas y servicios con Zabbix y Grafana, identificación y
+                resolución de incidencias, documentación técnica y troubleshooting.
+              </p>
+              <p>
+                Desarrollo y pruebas de automatizaciones e integraciones con LLMs como ChatGPT,
+                Claude y Gemini.
               </p>
             </div>
           </div>
 
           <div class="timeline-item">
-            <div class="year">2024</div>
+            <div class="year"> 2024 </div>
             <div class="timeline-content">
-              <h3>Aprendiz en prácticas · Inicia Soluciones</h3>
+              <h3>DevOps Intern · Inicia Soluciones</h3>
               <p>
-                Colaboración en desarrollo web, bases de datos, administración básica de Linux,
-                servicios internos, Docker, virtualización y mantenimiento de aplicaciones y APIs.
+                Prácticas en el área de DevOps y sistemas, dando soporte en tareas de
+                infraestructura, virtualización, despliegue, administración Linux y bases de datos.
               </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="education" class="reveal">
-      <div class="container">
-        <h2 class="section-title">Estudios</h2>
-
-        <div class="timeline">
-          <div class="timeline-item">
-            <div class="year">2025 - Actualidad</div>
-            <div class="timeline-content">
-              <h3>Grado en Ingeniería Informática · UOC</h3>
               <p>
-                Formación universitaria en programación, sistemas, redes, bases de datos,
-                ingeniería del software y fundamentos de informática.
-              </p>
-            </div>
-          </div>
-
-          <div class="timeline-item">
-            <div class="year">2022 - 2024</div>
-            <div class="timeline-content">
-              <h3>Técnico Superior en Desarrollo de Aplicaciones Web · I.E.S. Lázaro Cárdenas</h3>
-              <p>
-                Formación en desarrollo full-stack, interfaces web, bases de datos, programación,
-                despliegue de aplicaciones y administración básica de sistemas.
+                Apoyo en el desarrollo y mantenimiento de aplicaciones web, APIs y servicios
+                internos, resolución de incidencias y trabajo en equipo dentro de entornos Agile.
               </p>
             </div>
           </div>
@@ -958,69 +1052,83 @@ footer{
 
         <div class="skills-grid">
           <div class="card skill-card">
-            <h3>Infraestructura & DevOps</h3>
+            <h3>Sistemas & DevOps</h3>
             <ul>
-              <li>Linux · Docker · Proxmox · VMware</li>
-              <li>Git/GitHub · Jenkins · CI/CD</li>
-              <li>Nginx · Apache · SSH</li>
-              <li>pfSense · WireGuard</li>
-              <li>Cloud infrastructure · troubleshooting</li>
+              <li>Linux · Docker</li>
+              <li>Proxmox · VMware</li>
+              <li>Nginx · SSH</li>
+              <li>Git · GitHub</li>
             </ul>
           </div>
 
           <div class="card skill-card">
-            <h3>Automatización & Python</h3>
+            <h3>Automatización & Integración</h3>
             <ul>
-              <li>Python para scripts y automatización</li>
-              <li>Bash scripting</li>
-              <li>Automatización de procesos técnicos</li>
-              <li>APIs REST e integración de servicios</li>
-              <li>Documentación técnica y mantenimiento</li>
+              <li>Python · Bash</li>
+              <li>n8n</li>
+              <li>REST APIs · JSON</li>
+              <li>Webhooks</li>
             </ul>
           </div>
 
           <div class="card skill-card">
-            <h3>Desarrollo web</h3>
+            <h3>Desarrollo</h3>
             <ul>
-              <li>Vue.js · React · Angular</li>
-              <li>Node.js · Express · FastAPI</li>
-              <li>PHP · JavaScript</li>
-              <li>MySQL · MariaDB · SQL</li>
-              <li>Aplicaciones web y microservicios</li>
+              <li>JavaScript · Node.js</li>
+              <li>FastAPI · Vue.js</li>
+              <li>SQL · MySQL</li>
+              <li>MariaDB</li>
             </ul>
           </div>
 
           <div class="card skill-card">
-            <h3>Observabilidad</h3>
+            <h3>Monitorización</h3>
             <ul>
               <li>Zabbix · Grafana</li>
-              <li>Monitorización de servicios</li>
-              <li>Análisis de incidencias</li>
-              <li>Rendimiento y disponibilidad</li>
-              <li>Métricas, alertas y mantenimiento</li>
+              <li>Troubleshooting</li>
+              <li>Métricas y alertas</li>
+              <li>Disponibilidad de servicios</li>
             </ul>
           </div>
+        </div>
 
-          <div class="card skill-card">
-            <h3>IA aplicada</h3>
-            <ul>
-              <li>ChatGPT · Claude · GitHub Copilot</li>
-              <li>Prompt Engineering</li>
-              <li>Automatización asistida por IA</li>
-              <li>Agentes conversacionales</li>
-              <li>Análisis de código y documentación</li>
-            </ul>
+        <div class="card secondary-stack">
+          <h3>Otras tecnologías</h3>
+          <p>
+            React · Angular · PHP · Apache · pfSense · WireGuard · Jenkins · Express.js ·
+            Google Apps Script · IA generativa · LLM integrations
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="value" class="reveal">
+      <div class="container">
+        <h2 class="section-title">Competencias</h2>
+
+        <div class="value-grid">
+          <div class="card value-card">
+            <h3>Sistemas</h3>
+            <p>
+              Administración Linux, virtualización, Docker, servidores web, troubleshooting y
+              monitorización de servicios.
+            </p>
           </div>
 
-          <div class="card skill-card">
-            <h3>Forma de trabajo</h3>
-            <ul>
-              <li>Scrum · Agile</li>
-              <li>Control de versiones</li>
-              <li>Trabajo en equipo técnico</li>
-              <li>Resolución de problemas</li>
-              <li>Aprendizaje continuo</li>
-            </ul>
+          <div class="card value-card">
+            <h3>Automatización</h3>
+            <p>
+              Python, Bash, n8n, APIs y webhooks para automatizar tareas, conectar servicios y
+              reducir procesos manuales.
+            </p>
+          </div>
+
+          <div class="card value-card">
+            <h3>Desarrollo</h3>
+            <p>
+              Desarrollo y mantenimiento de aplicaciones, APIs y servicios web con experiencia
+              tanto en backend como en frontend.
+            </p>
           </div>
         </div>
       </div>
@@ -1035,31 +1143,42 @@ footer{
             <div class="project-label">Web & Deployment</div>
             <h3>Portfolio profesional</h3>
             <p>
-              Portfolio responsive orientado a mostrar experiencia técnica, stack, proyectos y contacto
-              de forma clara, moderna y preparada para GitHub Pages.
+              Portfolio responsive desarrollado para presentar experiencia, stack técnico,
+              proyectos y vías de contacto. Desplegado mediante GitHub Pages y diseñado para
+              funcionar en escritorio y dispositivos móviles.
             </p>
 
             <div class="tags">
-              <span class="tag">Responsive Design</span>
-              <span class="tag">Personal Branding</span>
+              <span class="tag">HTML</span>
+              <span class="tag">CSS</span>
+              <span class="tag">JavaScript</span>
               <span class="tag">GitHub Pages</span>
-              <span class="tag">UX</span>
+            </div>
+
+            <div class="project-actions">
+              <a class="project-link" href="https://github.com/jimmy290801" target="_blank" rel="noopener noreferrer">Ver en GitHub</a>
             </div>
           </article>
 
           <article class="card project-card">
-            <div class="project-label">Automation & Services</div>
+            <div class="project-label">Infrastructure & Containers</div>
             <h3>Docker Compose Stack</h3>
             <p>
-              Repositorio de servicios y configuraciones para practicar despliegues reproducibles,
-              automatización, administración Linux y mantenimiento de aplicaciones en contenedores.
+              Entorno contenerizado orientado a practicar despliegues reproducibles y gestión de
+              servicios con Docker Compose, integrando aplicación, base de datos, caché y proxy
+              inverso.
             </p>
 
             <div class="tags">
               <span class="tag">Docker</span>
-              <span class="tag">Linux</span>
-              <span class="tag">Automation</span>
-              <span class="tag">Deployment</span>
+              <span class="tag">FastAPI</span>
+              <span class="tag">PostgreSQL</span>
+              <span class="tag">Redis</span>
+              <span class="tag">Nginx</span>
+            </div>
+
+            <div class="project-actions">
+              <a class="project-link" href="https://github.com/jimmy290801" target="_blank" rel="noopener noreferrer">Ver repositorios</a>
             </div>
           </article>
         </div>
@@ -1068,7 +1187,13 @@ footer{
 
     <section id="contact" class="reveal">
       <div class="container">
-        <h2 class="section-title">Contacto</h2>
+        <div class="contact-intro">
+          <h2 class="section-title">¿Trabajamos <span>juntos?</span></h2>
+          <p>
+            Actualmente estoy buscando nuevas oportunidades en IT, sistemas, DevOps,
+            infraestructura, automatización y desarrollo.
+          </p>
+        </div>
 
         <div class="contact-grid">
           <div class="contact-item">
@@ -1078,13 +1203,17 @@ footer{
 
           <div class="contact-item">
             <strong>LinkedIn</strong><br>
-            <a href="https://www.linkedin.com/in/germancastroramos/" target="_blank">linkedin.com/in/germancastroramos</a>
+            <a href="https://www.linkedin.com/in/germancastroramos/" target="_blank" rel="noopener noreferrer">linkedin.com/in/germancastroramos</a>
           </div>
 
           <div class="contact-item">
             <strong>GitHub</strong><br>
-            <a href="https://github.com/jimmy290801" target="_blank">github.com/jimmy290801</a>
+            <a href="https://github.com/jimmy290801" target="_blank" rel="noopener noreferrer">github.com/jimmy290801</a>
           </div>
+        </div>
+
+        <div class="availability-line">
+          Madrid · Disponibilidad inmediata · Presencial / Híbrido / Remoto
         </div>
       </div>
     </section>
@@ -1097,11 +1226,11 @@ footer{
 
   <script>
 const phrases = [
-  "Construyendo proyectos que no se quedan en localhost...",
+  "Administrando sistemas Linux y servicios...",
   "Automatizando tareas con Python y Bash...",
-  "Desplegando servicios con Docker y Linux...",
-  "Monitorizando sistemas con Zabbix y Grafana...",
-  "Aplicando IA generativa a desarrollo y documentación..."
+  "Desplegando aplicaciones con Docker...",
+  "Integrando servicios mediante APIs y webhooks...",
+  "Monitorizando sistemas con Zabbix y Grafana..."
 ];
 
 const typewriterText = document.getElementById("typewriter-text");
