@@ -103,3 +103,13 @@ document.addEventListener("DOMContentLoaded", async () => {
     }
   }
 });
+
+// Mostrar la flecha solo después de desplazarse hacia abajo.
+(function(){
+  const button=document.getElementById('backToTop');
+  if(!button)return;
+  const update=()=>button.classList.toggle('is-visible',window.scrollY>320);
+  window.addEventListener('scroll',update,{passive:true});
+  update();
+  button.addEventListener('click',()=>window.scrollTo({top:0,behavior:window.matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth'}));
+})();
