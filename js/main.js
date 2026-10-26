@@ -2,11 +2,11 @@ import { initProjects } from "./projects.js";
 import { initActiveNavigation } from "./navigation.js";
 
 const phrases = [
-  "Administrando sistemas Linux y servicios...",
-  "Automatizando tareas con Python y Bash...",
-  "Desplegando aplicaciones con Docker...",
-  "Integrando servicios mediante APIs y webhooks...",
-  "Monitorizando sistemas con Zabbix y Grafana..."
+  "Automatizando despliegues con GitLab CI/CD...",
+  "Administrando Linux y Microsoft Azure...",
+  "Desplegando servicios con Docker y Kubernetes...",
+  "Integrando sistemas con Python, Bash y n8n...",
+  "Monitorizando servicios con Zabbix y Grafana..."
 ];
 
 function initTypewriter(){
